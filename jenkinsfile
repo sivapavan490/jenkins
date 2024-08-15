@@ -4,6 +4,7 @@ pipeline {
             label 'jenkins'
         } 
     }
+// build
     stages {
         stage('Example') {
             steps {
@@ -19,6 +20,15 @@ pipeline {
             steps {
                 echo 'Hello World'
             }
+        }
+    }
+    // post build
+    post{
+        always{
+            echo " pipeline is stabel"
+        }
+        failure{
+            echo "pipeline is failure"
         }
     }
 }

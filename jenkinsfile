@@ -5,7 +5,10 @@ pipeline {
         } 
     }
     environment{
-        agentip= 172.23.24.5
+        agentip=172.23.24.5
+    }
+    options{
+        timeout(time:1,unit: 'HOURS')
     }
 // build
     stages {
@@ -22,7 +25,7 @@ pipeline {
          stage('Example 2 ') {
             steps {
                 sh """
-                env
+                    env
                 """
             }
         }

@@ -4,6 +4,9 @@ pipeline {
             label 'siva'
         } 
     }
+    environment{
+        agentip= 172.23.24.5
+    }
 // build
     stages {
         stage('Example') {

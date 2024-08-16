@@ -10,7 +10,7 @@ pipeline {
     options{
         timeout(time:1,unit: 'HOURS')
     }
-       parameters {
+    parameters {
         string(name: 'PERSON', defaultValue: 'Mr Jenkins', description: 'Who should I say hello to?')
 
         text(name: 'BIOGRAPHY', defaultValue: '', description: 'Enter some information about the person')
@@ -39,7 +39,7 @@ pipeline {
                     env
                 """
             }
-             stage('check params'){
+    stage('check params'){
             steps{
                 sh """
                     echo "Hello ${params.PERSON}"
